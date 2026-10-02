@@ -301,9 +301,9 @@ h1 {
 .study-visuals {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)) 100px;
-  align-items: center;
+  align-items: end;
   gap: 20px;
-  padding: 0 40px 36px;
+  padding: 0 40px 40px;
 }
 .study-visuals .screen {
   border: 3px solid #dcebed;
