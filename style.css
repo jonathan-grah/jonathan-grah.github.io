@@ -108,8 +108,32 @@ h2 {
   width: min(728px, calc(100% - 48px));
   margin-inline: auto;
 }
+.announcement {
+  padding: 13px 24px;
+  background: #edf4f2;
+  border-bottom: 1px solid #dce7e4;
+  color: #2a534a;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+.announcement a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+.announcement-cta {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.announcement a:hover .announcement-cta {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .intro {
-  padding-top: 80px;
+  padding-top: 64px;
 }
 .portrait {
   width: 80px;
@@ -136,15 +160,13 @@ h1 {
 .bio p + p {
   margin-top: 17px;
 }
-.bio a,
-.contact p a {
+.bio a {
   text-decoration: underline;
   text-decoration-color: #c2c6ce;
   text-underline-offset: 4px;
   transition: text-decoration-color 0.15s;
 }
-.bio a:hover,
-.contact p a:hover {
+.bio a:hover {
   text-decoration-color: currentColor;
 }
 .socials {
@@ -688,10 +710,6 @@ a.experience-row:hover strong {
 .contact {
   margin-top: 72px;
 }
-.contact p {
-  margin-top: 16px;
-  max-width: 570px;
-}
 .copy-email {
   display: inline-flex;
   gap: 12px;
@@ -1153,9 +1171,6 @@ body:has(dialog[open]) {
   .elsewhere,
   .contact {
     margin-top: 53px;
-  }
-  .contact p {
-    font-size: 15px;
   }
   footer {
     margin-top: 55px;

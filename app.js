@@ -25,7 +25,7 @@ document.querySelector(".copy-email").addEventListener("click", async () => {
   const status = document.querySelector(".copy-status");
   clearTimeout(copyReset);
   try {
-    await navigator.clipboard.writeText("jonathan@studystash.com");
+    await navigator.clipboard.writeText("jonathan@jgraham.dev");
     status.textContent = "Copied!";
   } catch {
     status.textContent = "You can select and copy the address above.";
