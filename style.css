@@ -21,13 +21,13 @@
 }
 :root {
   color-scheme: light;
-  --page-width: 864px;
+  --page-width: 784px;
   --page-gutter: 32px;
   --card-padding: 40px;
   --section-gap: 72px;
   --content-width: min(
-    calc(var(--page-width) - var(--card-padding) * 2),
-    calc(100% - var(--page-gutter) * 2 - var(--card-padding) * 2)
+    var(--page-width),
+    calc(100% - var(--page-gutter) * 2)
   );
   --bg: #fff;
   --text: #32343a;
@@ -206,7 +206,7 @@ h1 {
   color: #727985;
 }
 .work {
-  width: min(var(--page-width), calc(100% - var(--page-gutter) * 2));
+  width: var(--content-width);
   margin: var(--section-gap) auto 0;
   display: grid;
   gap: var(--section-gap);
@@ -691,7 +691,7 @@ body:has(dialog[open]) {
 }
 @media (max-width: 480px) {
   :root {
-    --page-gutter: 16px;
+    --page-gutter: 24px;
     --card-padding: 24px;
     --section-gap: 40px;
   }
