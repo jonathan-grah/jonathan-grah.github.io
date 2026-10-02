@@ -233,7 +233,7 @@ h1 {
   margin-bottom: 16px;
   letter-spacing: -0.35px;
 }
-.project-copy h2 > img:not(.fcc-wordmark) {
+.project-copy h2 > img {
   border-radius: 6px;
 }
 .project-meta {
@@ -277,8 +277,39 @@ h1 {
 .project-link span {
   font-size: 17px;
 }
-.studystash {
+.project.studystash {
   background: #087d94;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.studystash .project-copy {
+  width: auto;
+  max-width: none;
+  padding: 40px;
+}
+.studystash .project-copy p {
+  max-width: 680px;
+}
+.studystash .project-copy .project-lead {
+  max-width: none;
+  font-size: 24px;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  margin-bottom: 20px;
+}
+.study-visuals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0 40px 36px;
+}
+.study-visuals .screen {
+  border: 3px solid #dcebed;
+  box-shadow: 0 8px 24px #062c3540;
+}
+.study-visuals .screen:hover {
+  transform: translateY(-3px);
 }
 .brand-link {
   display: block;
@@ -313,46 +344,6 @@ h1 {
   box-shadow:
     0 6px 14px #071a3530,
     0 22px 55px #071a354d;
-}
-.study-visuals {
-  position: absolute;
-  inset: 0 0 0 380px;
-}
-.desktop-screen {
-  position: absolute;
-  width: 490px;
-  left: 20px;
-  top: -23px;
-  transform: rotate(-2deg);
-  border: 4px solid #e6f1f1;
-}
-.desktop-screen:hover {
-  transform: rotate(-1deg) translateY(-4px);
-}
-.analytics-screen {
-  position: absolute;
-  width: 325px;
-  left: 2px;
-  top: 189px;
-  transform: rotate(2deg);
-  border: 4px solid #e6f1f1;
-  z-index: 2;
-}
-.analytics-screen:hover {
-  transform: rotate(1deg) translateY(-4px);
-}
-.phone-screen {
-  position: absolute;
-  right: -17px;
-  top: 89px;
-  width: 141px;
-  border: 5px solid #17282f;
-  border-radius: 18px;
-  transform: rotate(5deg);
-  z-index: 3;
-}
-.phone-screen:hover {
-  transform: rotate(3deg) translateY(-4px);
 }
 .ayp {
   background: #f7c448;
@@ -457,50 +448,6 @@ h1 {
 }
 .augii-events:hover {
   transform: rotate(2deg) translateY(-4px);
-}
-.musare {
-  background: #7856da;
-  min-height: 320px;
-}
-.musare .project-copy {
-  margin-left: auto;
-  padding: 36px 36px 36px 0;
-  width: 325px;
-}
-.musare-screen {
-  position: absolute;
-  width: 505px;
-  left: -40px;
-  top: 39px;
-  transform: rotate(-3deg);
-  border: 4px solid #e5dcff;
-}
-.musare-screen:hover {
-  transform: rotate(-1deg) translateY(-4px);
-}
-.freecodecamp {
-  background: #293455;
-  min-height: 330px;
-}
-.freecodecamp .project-copy {
-  width: 343px;
-}
-.fcc-wordmark {
-  width: 205px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-  max-width: 100%;
-}
-.fcc-screen {
-  position: absolute;
-  width: 490px;
-  right: -41px;
-  top: 35px;
-  transform: rotate(2deg);
-  border: 4px solid #d7deee;
-}
-.fcc-screen:hover {
-  transform: rotate(1deg) translateY(-4px);
 }
 .experience {
   margin-top: 103px;
@@ -816,40 +763,6 @@ body:has(dialog[open]) {
     padding-left: 30px;
     width: 320px;
   }
-  .study-visuals {
-    left: 345px;
-  }
-  .desktop-screen {
-    width: 435px;
-    left: 0;
-  }
-  .analytics-screen {
-    width: 295px;
-    left: -10px;
-    top: 195px;
-  }
-  .phone-screen {
-    right: -12px;
-    top: 103px;
-    width: 126px;
-  }
-  .musare .project-copy {
-    width: 300px;
-    padding-right: 30px;
-  }
-  .musare-screen {
-    width: 465px;
-    left: -20px;
-    top: 48px;
-  }
-  .fcc-screen {
-    width: 435px;
-    right: -20px;
-    top: 48px;
-  }
-  .freecodecamp .project-copy {
-    width: 305px;
-  }
   .ayp .project-copy {
     width: 350px;
     padding-right: 30px;
@@ -878,6 +791,16 @@ body:has(dialog[open]) {
   }
 }
 @media (max-width: 860px) {
+  .studystash {
+    padding-bottom: 0;
+  }
+  .studystash .project-copy {
+    padding: 32px;
+  }
+  .study-visuals {
+    padding: 0 32px 32px;
+    gap: 16px;
+  }
   .intro {
     padding-top: 64px;
   }
@@ -901,56 +824,6 @@ body:has(dialog[open]) {
   }
   .project-link {
     margin-top: 18px;
-  }
-  .study-visuals {
-    inset: auto 0 0;
-    height: 268px;
-  }
-  .desktop-screen {
-    width: 76%;
-    max-width: 460px;
-    top: 14px;
-    left: 7%;
-  }
-  .analytics-screen {
-    width: 48%;
-    left: 3%;
-    top: 142px;
-  }
-  .phone-screen {
-    width: 108px;
-    top: 65px;
-    right: 5%;
-  }
-  .musare {
-    padding-bottom: 300px;
-  }
-  .musare .project-copy {
-    width: auto;
-    padding: 28px 28px 0;
-    max-width: 480px;
-    margin-left: 0;
-  }
-  .musare-screen {
-    width: 90%;
-    max-width: 550px;
-    left: 5%;
-    top: auto;
-    bottom: 3px;
-    transform: rotate(-3deg);
-  }
-  .freecodecamp {
-    padding-bottom: 296px;
-  }
-  .freecodecamp .project-copy {
-    width: auto;
-  }
-  .fcc-screen {
-    width: 90%;
-    max-width: 550px;
-    right: 5%;
-    top: auto;
-    bottom: 4px;
   }
   .ayp {
     padding-bottom: 345px;
@@ -1017,6 +890,16 @@ body:has(dialog[open]) {
   }
 }
 @media (max-width: 480px) {
+  .studystash .project-copy {
+    padding: 28px 24px;
+  }
+  .studystash .project-copy .project-lead {
+    font-size: 21px;
+  }
+  .study-visuals {
+    padding: 0 24px 24px;
+    gap: 12px;
+  }
   .text-width {
     width: calc(100% - 48px);
   }
@@ -1048,7 +931,6 @@ body:has(dialog[open]) {
     width: calc(100% - 32px);
   }
   .project-copy,
-  .musare .project-copy,
   .ayp .project-copy {
     padding: 26px 24px 0;
   }
@@ -1057,42 +939,6 @@ body:has(dialog[open]) {
   }
   .project-group {
     gap: 24px;
-  }
-  .study-visuals {
-    height: 231px;
-  }
-  .desktop-screen {
-    width: 85%;
-    left: 6%;
-    top: 20px;
-  }
-  .analytics-screen {
-    width: 57%;
-    top: 125px;
-    left: 2%;
-  }
-  .phone-screen {
-    width: 94px;
-    right: 4%;
-    top: 60px;
-    border-width: 4px;
-    border-radius: 13px;
-  }
-  .musare {
-    padding-bottom: 211px;
-  }
-  .musare-screen {
-    bottom: 17px;
-    width: 95%;
-    left: 3%;
-  }
-  .freecodecamp {
-    padding-bottom: 211px;
-  }
-  .fcc-screen {
-    bottom: 17px;
-    width: 95%;
-    right: 3%;
   }
   .ayp {
     padding-bottom: 290px;
