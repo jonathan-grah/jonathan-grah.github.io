@@ -299,41 +299,6 @@ h1 {
 .studystash {
   background: #087d94;
 }
-.project-impact {
-  margin-inline: 40px;
-}
-.project-impact h3 {
-  margin: 0;
-  color: var(--heading);
-  font-size: 13px;
-  font-weight: 500;
-}
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin: 20px 0 14px;
-}
-.impact-grid > div {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  gap: 6px;
-}
-.impact-grid dt {
-  max-width: 185px;
-  font-size: 12px;
-  line-height: 1.6;
-}
-.impact-grid dd {
-  margin: 0;
-  color: var(--heading);
-  font-size: 32px;
-  line-height: 1.2;
-  font-weight: 500;
-  letter-spacing: -1px;
-  font-variant-numeric: tabular-nums;
-}
 .brand-link {
   display: block;
   margin-bottom: 20px;
@@ -726,7 +691,7 @@ a.experience-row:hover strong {
 }
 .article-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
   padding: 17px 0;
@@ -736,6 +701,22 @@ a.experience-row:hover strong {
 .article-row:hover > span:first-child {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.article-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.article-icon {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  padding: 2px;
+  border-radius: 4px;
+  background: #fff;
+  object-fit: contain;
 }
 .article-source {
   font-size: 12px;
@@ -963,9 +944,6 @@ body:has(dialog[open]) {
     padding-bottom: 290px;
     overflow: hidden;
   }
-  .project-impact {
-    margin-inline: 28px;
-  }
   .project-copy {
     padding: 28px 28px 0;
     width: auto;
@@ -1136,20 +1114,6 @@ body:has(dialog[open]) {
   .project-group {
     gap: 24px;
   }
-  .project-impact {
-    margin-inline: 24px;
-  }
-  .impact-grid {
-    gap: 14px;
-    margin-top: 18px;
-  }
-  .impact-grid dt {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-  .impact-grid dd {
-    font-size: clamp(19px, 6vw, 26px);
-  }
   .study-visuals {
     height: 231px;
   }
@@ -1257,6 +1221,7 @@ body:has(dialog[open]) {
     display: block;
     text-align: left;
     margin-top: 3px;
+    margin-left: 34px;
     max-width: none;
   }
   .elsewhere,
