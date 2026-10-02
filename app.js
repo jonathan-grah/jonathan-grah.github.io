@@ -1,39 +1,3 @@
-const themeButton = document.querySelector(".theme-toggle");
-const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
-let chosenTheme;
-try {
-  chosenTheme = localStorage.getItem("jg-theme");
-} catch {}
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeButton.setAttribute(
-    "aria-label",
-    `Switch to ${theme === "dark" ? "light" : "dark"} theme`,
-  );
-  themeButton.setAttribute("aria-pressed", String(theme === "dark"));
-  document.querySelector('meta[name="theme-color"]').content =
-    theme === "dark" ? "#15171c" : "#ffffff";
-}
-applyTheme(chosenTheme || (colorPreference.matches ? "dark" : "light"));
-themeButton.addEventListener("click", () => {
-  chosenTheme =
-    document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(chosenTheme);
-  try {
-    localStorage.setItem("jg-theme", chosenTheme);
-  } catch {}
-});
-colorPreference.addEventListener("change", (event) => {
-  if (!chosenTheme) applyTheme(event.matches ? "dark" : "light");
-});
-const clock = document.querySelector("#clock");
-function updateClock() {
-  const now = new Date();
-  clock.dateTime = now.toISOString();
-  clock.textContent = `${now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" })} UTC`;
-}
-updateClock();
-setInterval(updateClock, 10000);
 const viewer = document.querySelector(".image-viewer");
 document.querySelectorAll("[data-image]").forEach((button) => {
   button.addEventListener("click", () => {

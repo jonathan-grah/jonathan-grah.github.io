@@ -108,49 +108,8 @@ h2 {
   width: min(728px, calc(100% - 48px));
   margin-inline: auto;
 }
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 104px;
-}
-.clock {
-  font-size: 12px;
-  letter-spacing: 0.1px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.clock-dot {
-  height: 5px;
-  width: 5px;
-  background: #0c9b7c;
-  border-radius: 50%;
-}
-.theme-toggle {
-  border: 0;
-  background: transparent;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--muted);
-}
-.theme-toggle:hover {
-  background: var(--hover);
-}
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-}
-.moon {
-  display: none;
-}
 .intro {
-  padding-top: 41px;
+  padding-top: 80px;
 }
 .portrait {
   width: 80px;
@@ -825,33 +784,6 @@ footer a:hover {
 body:has(dialog[open]) {
   overflow: hidden;
 }
-[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #15171c;
-  --text: #c1c4cc;
-  --heading: #f2f3f5;
-  --muted: #9298a5;
-  --line: #2c2f37;
-  --hover: #282b33;
-  --wash: linear-gradient(110deg, #163038, #1e2d2a 35%, #252238 70%, #32222f);
-}
-[data-theme="dark"] .sun {
-  display: none;
-}
-[data-theme="dark"] .moon {
-  display: block;
-}
-[data-theme="dark"] .linkedin {
-  color: #6daff1;
-}
-[data-theme="dark"] .github {
-  color: #f0f2f7;
-}
-[data-theme="dark"] .university-icon {
-  background: white;
-  padding: 3px;
-  border-radius: 5px;
-}
 @media (min-width: 1000px) {
   .work {
     margin-top: 82px;
@@ -928,11 +860,8 @@ body:has(dialog[open]) {
   }
 }
 @media (max-width: 860px) {
-  .topbar {
-    height: 83px;
-  }
   .intro {
-    padding-top: 28px;
+    padding-top: 64px;
   }
   .work {
     width: calc(100% - 40px);
@@ -1073,11 +1002,8 @@ body:has(dialog[open]) {
   .text-width {
     width: calc(100% - 48px);
   }
-  .topbar {
-    height: 72px;
-  }
   .intro {
-    padding-top: 30px;
+    padding-top: 48px;
   }
   .portrait {
     width: 72px;
